@@ -1,0 +1,52 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Memoraa - Undangan Digital Premium",
+  description: "Buat undangan pernikahan digital yang elegan dan berkesan bersama Memoraa. Template premium untuk hari spesialmu.",
+  icons: {
+    icon: "/memoraa-logo.png",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="id" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased bg-background text-foreground`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
