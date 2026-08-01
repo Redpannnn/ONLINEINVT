@@ -7,12 +7,16 @@ import { Button } from '@/components/ui/button';
 import {
   Palette,
   ImageIcon,
-  Crown,
   Sparkles,
   Bell,
   ArrowLeft,
   Sun,
   Moon,
+  Download,
+  Check,
+  X,
+  Minus,
+  GitCompareArrows,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
@@ -33,70 +37,60 @@ interface TemplateItem {
 const templates: TemplateItem[] = [
   {
     id: 'basic-1',
-    name: 'Sederhana',
+    name: 'Ethernal',
     slug: 'basic-sederhana',
     category: 'basic',
     description: 'Desain clean dan minimalis dengan sentuhan floral lembut. Cocok untuk kamu yang suka kesederhanaan namun tetap elegan.',
     image: '/templates/basic-sederhana.png',
-    price: 'Gratis',
+    price: 'Rp 40.000',
     features: ['Responsif', 'Musik Latar', 'Galery Foto'],
-    url: 'https://memoraa-invitation.vercel.app/template/basic-sederhana',
+    url: 'https://ethernal-neon.vercel.app/',
   },
   {
     id: 'basic-2',
-    name: 'Minimalis',
+    name: 'Ivo Swart',
     slug: 'basic-minimalis',
     category: 'basic',
     description: 'Tampilan modern dengan aksen botanical dan tipografi bersih. Pilihan sempurna untuk gaya pernikahan yang contemporary.',
     image: '/templates/basic-minimalis.png',
-    price: 'Gratis',
+    price: 'Rp 60.000',
     features: ['Responsif', 'Hitung Mundur', 'Amplop Digital'],
-    url: 'https://memoraa-invitation.vercel.app/template/basic-minimalis',
+    url: 'https://ivo-swart.vercel.app/',
+  },
+  {
+    id: 'basic-3',
+    name: 'Nature Love',
+    slug: 'basic-nature-love',
+    category: 'basic',
+    description: 'Nuansa alam dengan sentuhan hijau dan floral natural. Cocok untuk kamu yang menyukai kesan segar dan organik.',
+    image: '/templates/basic-nature-love.png',
+    price: 'Rp 75.000',
+    features: ['Responsif', 'Musik Latar', 'Hitung Mundur'],
+    url: 'https://naturelove-xi.vercel.app/',
   },
   {
     id: 'eksklusif-1',
-    name: 'Elegan',
+    name: 'Serene Love',
     slug: 'eksklusif-elegan',
     category: 'eksklusif',
     description: 'Nuansa burgundy dan gold dengan ornamen bunga mewah. Menghadirkan kesan premium dan anggun untuk hari istimewamu.',
     image: '/templates/eksklusif-elegan.png',
-    price: 'Rp 99.000',
+    price: 'Rp 100.000',
     features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
-    url: 'https://memoraa-invitation.vercel.app/template/eksklusif-elegan',
+    url: 'https://serenelove.vercel.app/',
   },
   {
     id: 'eksklusif-2',
-    name: 'Romantis',
+    name: 'JAVANESE',
     slug: 'eksklusif-romantis',
     category: 'eksklusif',
     description: 'Sentuhan watercolor floral dengan nuansa dusty rose. Desain penuh cinta yang menceritakan kisah pernikahanmu.',
     image: '/templates/eksklusif-romantis.png',
-    price: 'Rp 149.000',
+    price: 'Rp 85.000',
     features: ['Animasi Halus', 'Love Story', 'Galery Grid', 'Wishes'],
-    url: 'https://memoraa-invitation.vercel.app/template/eksklusif-romantis',
+    url: 'https://javanese-rosy.vercel.app/',
   },
-  {
-    id: 'luxury-1',
-    name: 'Premium',
-    slug: 'luxury-premium',
-    category: 'luxury',
-    description: 'Keanggunan tak tertandingi dengan sentuhan gold foil dan baroque. Diperuntukkan bagi pernikahan paling eksklusif.',
-    image: '/templates/luxury-premium.png',
-    price: 'Rp 299.000',
-    features: ['3D Animation', 'Video Cinematic', 'Custom Domain', 'Fitur Lengkap'],
-    url: 'https://memoraa-invitation.vercel.app/template/luxury-premium',
-  },
-  {
-    id: 'luxury-2',
-    name: 'Royal',
-    slug: 'luxury-royal',
-    category: 'luxury',
-    description: 'Desain megah terinspirasi kerajaan dengan detail pearl dan crystal. Pengalaman undangan digital paling mewah.',
-    image: '/templates/luxury-royal.png',
-    price: 'Rp 399.000',
-    features: ['3D Animation', 'AR Undangan', 'Custom Domain', 'Priority Support'],
-    url: 'https://memoraa-invitation.vercel.app/template/luxury-royal',
-  },
+
 ];
 
 const categoryConfig = {
@@ -112,12 +106,7 @@ const categoryConfig = {
     color: 'bg-rose-100 text-rose-700 border-rose-200 dark:bg-rose-950/50 dark:text-rose-300 dark:border-rose-800',
     desc: 'Desain eksklusif dengan fitur lengkap',
   },
-  luxury: {
-    label: 'Template Luxury',
-    icon: Crown,
-    color: 'bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-950/50 dark:text-amber-300 dark:border-amber-800',
-    desc: 'Koleksi termewah untuk hari teristimewa',
-  },
+
 };
 
 /* ─── components ─── */
@@ -159,7 +148,6 @@ function TemplateCard({ template }: { template: TemplateItem }) {
               config.color
             )}
           >
-            {template.category === 'luxury' && <Crown className="h-2 w-2 sm:h-3 sm:w-3" />}
             {template.category === 'eksklusif' && (
               <Sparkles className="h-2 w-2 sm:h-3 sm:w-3" />
             )}
@@ -180,30 +168,13 @@ function TemplateCard({ template }: { template: TemplateItem }) {
       </div>
 
       {/* Card body */}
-      <div className="flex flex-1 flex-col gap-1.5 p-2.5 sm:gap-2 sm:p-4">
-        <h3 className="font-serif text-sm font-bold leading-tight text-foreground sm:text-lg">
+      <div className="flex flex-1 flex-col gap-2 p-2.5 sm:p-3">
+        <h3 className="font-serif text-sm font-bold leading-tight text-foreground sm:text-base">
           {template.name}
         </h3>
-        <p className="line-clamp-2 text-[10px] leading-relaxed text-muted-foreground sm:text-xs">
-          {template.description}
-        </p>
-
-        {/* Features */}
-        <div className="mt-0.5 flex flex-wrap gap-1 sm:mt-1 sm:gap-1.5">
-          {template.features.map((feature) => (
-            <span
-              key={feature}
-              className="rounded-full bg-muted px-1.5 py-0.5 text-[8px] font-medium text-muted-foreground sm:px-2 sm:text-[10px]"
-            >
-              {feature}
-            </span>
-          ))}
-        </div>
-
-        {/* Action hint */}
-        <div className="mt-auto pt-1.5 sm:pt-3">
+        <div className="mt-auto">
           <div
-            className="flex h-7 w-full items-center justify-center gap-1.5 rounded-md border border-dashed border-border text-[9px] font-medium text-muted-foreground transition-colors group-hover:border-primary/40 group-hover:text-primary sm:h-9 sm:gap-2 sm:text-xs"
+            className="flex h-7 w-full items-center justify-center gap-1.5 rounded-md border border-dashed border-border text-[9px] font-medium text-muted-foreground transition-colors group-hover:border-primary/40 group-hover:text-primary sm:h-8 sm:gap-2 sm:text-xs"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Buka Template
@@ -233,10 +204,158 @@ function TemplateGrid({ category }: { category: 'basic' | 'eksklusif' | 'luxury'
       </div>
 
       {/* Template grid */}
-      <div className="grid grid-cols-3 gap-3 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3 xl:gap-6">
+      <div className="grid grid-cols-3 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-3 lg:gap-6">
         {filtered.map((template) => (
           <TemplateCard key={template.id} template={template} />
         ))}
+      </div>
+    </div>
+  );
+}
+
+/* ─── comparison data ─── */
+type CellValue = boolean | string | { check: boolean; note: string };
+
+interface ComparisonFeature {
+  name: string;
+  basic: CellValue;
+  eksklusif: CellValue;
+}
+
+const comparisonFeatures: ComparisonFeature[] = [
+  { name: 'Desain Responsif', basic: true, eksklusif: true },
+  { name: 'Musik Latar', basic: true, eksklusif: true },
+  { name: 'Galeri Foto', basic: 'Maks. 3', eksklusif: 'Unlimited' },
+  { name: 'Hitung Mundur', basic: true, eksklusif: true },
+  { name: 'Amplop Digital', basic: false, eksklusif: true },
+  { name: 'RSVP Online', basic: false, eksklusif: true },
+  { name: 'Peta Lokasi', basic: 'Link Statis', eksklusif: 'Interaktif' },
+  { name: 'Animasi', basic: 'Dasar', eksklusif: 'Premium' },
+  { name: 'Video Cover', basic: false, eksklusif: true },
+  { name: 'Love Story', basic: false, eksklusif: true },
+  { name: 'Ucapan & Wishes', basic: false, eksklusif: true },
+  { name: 'Custom Domain', basic: { check: false, note: 'mempelai.memoraa.vercel.app' }, eksklusif: { check: true, note: 'mempelai.vercel.app / mempelai.site' } },
+];
+
+function ComparisonCell({ value }: { value: CellValue }) {
+  if (typeof value === 'boolean') {
+    if (value === true) {
+      return (
+        <div className="flex items-center justify-center">
+          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-950/60">
+            <Check className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" strokeWidth={3} />
+          </div>
+        </div>
+      );
+    }
+    return (
+      <div className="flex items-center justify-center">
+        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-50 dark:bg-red-950/40">
+          <X className="h-3.5 w-3.5 text-red-400 dark:text-red-500" strokeWidth={2.5} />
+        </div>
+      </div>
+    );
+  }
+  if (typeof value === 'string') {
+    return (
+      <span className="text-center text-xs font-medium text-muted-foreground">
+        {value}
+      </span>
+    );
+  }
+  // Object with check icon + note
+  return (
+    <div className="flex flex-col items-center gap-1">
+      <div className="flex items-center justify-center">
+        {value.check ? (
+          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-950/60">
+            <Check className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" strokeWidth={3} />
+          </div>
+        ) : (
+          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-50 dark:bg-red-950/40">
+            <X className="h-3.5 w-3.5 text-red-400 dark:text-red-500" strokeWidth={2.5} />
+          </div>
+        )}
+      </div>
+      <span className="max-w-[140px] text-center text-[10px] leading-tight text-muted-foreground">
+        {value.note}
+      </span>
+    </div>
+  );
+}
+
+function ComparisonTable({ expanded }: { expanded: boolean }) {
+  return (
+    <div className="rounded-2xl border border-border/40 bg-card overflow-hidden">
+      {/* Collapsible content */}
+      <div
+        className={cn(
+          'grid transition-all duration-300 ease-in-out',
+          expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+        )}
+      >
+        <div className="overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-border/40">
+                  <th className="px-3 py-2.5 text-left text-[10px] font-semibold text-muted-foreground md:px-4 md:py-3">
+                    Fitur
+                  </th>
+                  <th className="px-3 py-2.5 text-center text-[10px] font-semibold md:px-4 md:py-3">
+                    <div className="flex flex-col items-center gap-0.5">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-100 dark:bg-emerald-950/50">
+                        <Palette className="h-3 w-3 text-emerald-600 dark:text-emerald-400" />
+                      </div>
+                      <span className="text-emerald-700 dark:text-emerald-300">Basic</span>
+                      <span className="text-[9px] text-muted-foreground">Rp 40.000</span>
+                    </div>
+                  </th>
+                  <th className="px-3 py-2.5 text-center text-[10px] font-semibold md:px-4 md:py-3">
+                    <div className="flex flex-col items-center gap-0.5">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-md bg-rose-100 dark:bg-rose-950/50">
+                        <Sparkles className="h-3 w-3 text-rose-600 dark:text-rose-400" />
+                      </div>
+                      <span className="text-rose-700 dark:text-rose-300">Eksklusif</span>
+                      <span className="text-[9px] text-muted-foreground">Rp 100.000</span>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonFeatures.map((feature, idx) => (
+                  <tr
+                    key={feature.name}
+                    className={cn(
+                      'border-b border-border/20 transition-colors hover:bg-muted/30',
+                      idx === comparisonFeatures.length - 1 && 'border-b-0'
+                    )}
+                  >
+                    <td className="px-3 py-2.5 text-[11px] font-medium md:px-4 md:py-3">
+                      <span className="flex items-center gap-1.5">
+                        <Minus className="h-1 w-3 text-muted-foreground/40" />
+                        {feature.name}
+                      </span>
+                    </td>
+                    <td className="px-3 py-2.5 md:px-4 md:py-3">
+                      <ComparisonCell value={feature.basic} />
+                    </td>
+                    <td className="px-3 py-2.5 md:px-4 md:py-3">
+                      <ComparisonCell value={feature.eksklusif} />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Footer CTA */}
+          <div className="border-t border-border/40 p-3 md:p-4">
+            <p className="text-center text-[10px] text-muted-foreground">
+              Butuh fitur lebih lengkap? Pilih paket <span className="font-semibold text-rose-600 dark:text-rose-400">Eksklusif</span> untuk pengalaman terbaik.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -246,6 +365,7 @@ function TemplateGrid({ category }: { category: 'basic' | 'eksklusif' | 'luxury'
 export default function Home() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [comparisonExpanded, setComparisonExpanded] = useState(false);
 
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setMounted(true); }, []);
@@ -277,9 +397,19 @@ export default function Home() {
               Template Undangan
             </h1>
             <Badge variant="outline" className="text-[10px] font-normal">
-              6 Template
+  5 Template
             </Badge>
           </div>
+
+          {/* Download zip (dev only) */}
+          {process.env.NODE_ENV === 'development' && (
+            <a href="/memoraa-dashboard.zip" download>
+              <Button variant="ghost" size="icon" className="h-9 w-9">
+                <Download className="h-4 w-4" />
+                <span className="sr-only">Download Project</span>
+              </Button>
+            </a>
+          )}
 
           {/* Dark mode toggle */}
           {mounted && (
@@ -346,20 +476,27 @@ export default function Home() {
           {/* Stats row */}
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
             {[
-              { label: 'Total Template', value: '6', icon: ImageIcon },
-              { label: 'Template Basic', value: '2', icon: Palette },
+              { label: 'Total Template', value: '5', icon: ImageIcon },
+              { label: 'Template Basic', value: '3', icon: Palette },
               { label: 'Template Eksklusif', value: '2', icon: Sparkles },
-              { label: 'Template Luxury', value: '2', icon: Crown },
+              { label: 'Perbandingan Paket', value: 'VS', icon: GitCompareArrows },
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="flex items-center gap-3 rounded-xl border border-border/40 bg-card p-4"
+                className={cn(
+                  'flex items-center gap-3 rounded-xl border border-border/40 bg-card p-4',
+                  stat.label === 'Perbandingan Paket' && 'cursor-pointer transition-all hover:ring-2 hover:ring-primary/30 hover:ring-offset-2 hover:ring-offset-background'
+                )}
+                onClick={stat.label === 'Perbandingan Paket' ? () => setComparisonExpanded(!comparisonExpanded) : undefined}
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                  <stat.icon className="h-5 w-5 text-primary" />
+                <div className={cn(
+                  'flex h-10 w-10 shrink-0 items-center justify-center rounded-lg',
+                  stat.label === 'Perbandingan Paket' ? 'bg-primary text-primary-foreground' : 'bg-primary/10'
+                )}>
+                  <stat.icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-xl font-bold">{stat.value}</p>
+                  <p className={cn('font-bold', stat.label === 'Perbandingan Paket' ? 'text-lg' : 'text-xl')}>{stat.value}</p>
                   <p className="text-xs text-muted-foreground">
                     {stat.label}
                   </p>
@@ -367,6 +504,9 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          {/* Package Comparison - collapsible */}
+          <ComparisonTable expanded={comparisonExpanded} />
 
           {/* Tabs for template categories */}
           <Tabs defaultValue="basic" className="w-full">
@@ -387,14 +527,7 @@ export default function Home() {
                 <span className="hidden sm:inline">Template Eksklusif</span>
                 <span className="sm:hidden">Eksklusif</span>
               </TabsTrigger>
-              <TabsTrigger
-                value="luxury"
-                className="gap-1.5 data-[state=active]:bg-card"
-              >
-                <Crown className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Template Luxury</span>
-                <span className="sm:hidden">Luxury</span>
-              </TabsTrigger>
+
             </TabsList>
 
             <TabsContent value="basic" className="mt-6">
@@ -403,9 +536,7 @@ export default function Home() {
             <TabsContent value="eksklusif" className="mt-6">
               <TemplateGrid category="eksklusif" />
             </TabsContent>
-            <TabsContent value="luxury" className="mt-6">
-              <TemplateGrid category="luxury" />
-            </TabsContent>
+
           </Tabs>
         </div>
       </main>
