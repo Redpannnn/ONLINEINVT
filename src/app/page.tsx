@@ -232,7 +232,7 @@ const comparisonFeatures: ComparisonFeature[] = [
   { name: 'Video Cover', basic: false, eksklusif: true },
   { name: 'Love Story', basic: false, eksklusif: true },
   { name: 'Ucapan & Wishes', basic: false, eksklusif: true },
-  { name: 'Custom Domain', basic: { check: false, note: 'mempelai.memoraa.vercel.app' }, eksklusif: { check: true, note: 'mempelai.vercel.app / mempelai.site' } },
+  { name: 'Custom Domain', basic: { check: false, note: 'memoraa-invitation.my.id/namamempelai' }, eksklusif: { check: true, note: 'namamempelai.my.id' } },
 ];
 
 function ComparisonCell({ value }: { value: CellValue }) {
