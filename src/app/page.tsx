@@ -8,11 +8,9 @@ import {
   Palette,
   ImageIcon,
   Sparkles,
-  Bell,
   ArrowLeft,
   Sun,
   Moon,
-  Download,
   Check,
   X,
   Minus,
@@ -400,16 +398,6 @@ export default function Home() {
   5 Template
             </Badge>
           </div>
-
-          {/* Download zip (dev only) */}
-          {process.env.NODE_ENV === 'development' && (
-            <a href="/memoraa-dashboard.zip" download>
-              <Button variant="ghost" size="icon" className="h-9 w-9">
-                <Download className="h-4 w-4" />
-                <span className="sr-only">Download Project</span>
-              </Button>
-            </a>
-          )}
 
           {/* Dark mode toggle */}
           {mounted && (
