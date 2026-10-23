@@ -202,7 +202,7 @@ function TemplateGrid({ category }: { category: 'basic' | 'eksklusif' | 'luxury'
       </div>
 
       {/* Template grid */}
-      <div className="grid grid-cols-3 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-3 lg:gap-6">
+      <div className="grid grid-cols-3 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5 lg:gap-6">
         {filtered.map((template) => (
           <TemplateCard key={template.id} template={template} />
         ))}
@@ -416,12 +416,6 @@ export default function Home() {
             </Button>
           )}
 
-          <Button variant="ghost" size="icon" className="relative">
-            <Bell className="h-4 w-4" />
-            <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[9px] font-bold text-primary-foreground">
-              3
-            </span>
-          </Button>
         </div>
       </header>
 
