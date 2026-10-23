@@ -34,61 +34,82 @@ interface TemplateItem {
 
 const templates: TemplateItem[] = [
   {
-    id: 'basic-1',
-    name: 'Ethernal',
-    slug: 'basic-sederhana',
+    id: 'basic-greenery',
+    name: 'Greenery Botanical',
+    slug: 'basic-greenery-botanical',
     category: 'basic',
-    description: 'Desain clean dan minimalis dengan sentuhan floral lembut. Cocok untuk kamu yang suka kesederhanaan namun tetap elegan.',
-    image: '/templates/basic-sederhana.png',
+    description: 'Nuansa hijau botanical dengan sentuhan daun asri dan kesan natural. Cocok untuk pernikahan bertema alam yang segar dan menenangkan.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmvlceun2mlbcczqk/file',
     price: 'Rp 40.000',
     features: ['Responsif', 'Musik Latar', 'Galery Foto'],
-    url: 'https://ethernal-neon.vercel.app/',
+    url: 'https://greenery-botanical.memoraa-invitation.my.id/',
   },
   {
-    id: 'basic-2',
-    name: 'Ivo Swart',
-    slug: 'basic-minimalis',
+    id: 'basic-soft-bloom',
+    name: 'Soft Bloom',
+    slug: 'basic-soft-bloom',
     category: 'basic',
-    description: 'Tampilan modern dengan aksen botanical dan tipografi bersih. Pilihan sempurna untuk gaya pernikahan yang contemporary.',
-    image: '/templates/basic-minimalis.png',
+    description: 'Desain lembut dengan nuansa floral pastel yang romantis. Pilihan tepat untuk kamu yang menginginkan kesan gentle dan penuh kelembutan.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmvlcexx803qx6fh5/file',
     price: 'Rp 60.000',
-    features: ['Responsif', 'Hitung Mundur', 'Amplop Digital'],
-    url: 'https://ivo-swart.vercel.app/',
+    features: ['Responsif', 'Hitung Mundur', 'Galery Foto'],
+    url: 'https://soft-bloom.memoraa-invitation.my.id/',
   },
   {
-    id: 'basic-3',
-    name: 'Nature Love',
-    slug: 'basic-nature-love',
+    id: 'basic-warm-leaf',
+    name: 'Warm Leaf',
+    slug: 'basic-warm-leaf',
     category: 'basic',
-    description: 'Nuansa alam dengan sentuhan hijau dan floral natural. Cocok untuk kamu yang menyukai kesan segar dan organik.',
-    image: '/templates/basic-nature-love.png',
-    price: 'Rp 75.000',
+    description: 'Sentuhan daun dengan tone earthy yang hangat dan nyaman dipandang. Menghadirkan kesan akrab dan hangat untuk hari bahagiamu.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmvlceynk0cptid6s/file',
+    price: 'Rp 60.000',
     features: ['Responsif', 'Musik Latar', 'Hitung Mundur'],
-    url: 'https://naturelove-xi.vercel.app/',
+    url: 'https://warm-leaf.memoraa-invitation.my.id/',
   },
   {
-    id: 'eksklusif-1',
+    id: 'basic-midnight',
+    name: 'Midnight',
+    slug: 'basic-midnight',
+    category: 'basic',
+    description: 'Tema malam yang elegan dengan aksen gelap dramatis dan sentuhan cahaya lembut. Cocok untuk pernikahan dengan kesan modern dan misterius.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmvlck34pu6hqklln/file',
+    price: 'Rp 50.000',
+    features: ['Responsif', 'Musik Latar', 'Galery Foto'],
+    url: 'https://midnight.memoraa-invitation.my.id/',
+  },
+  {
+    id: 'eksklusif-serene',
     name: 'Serene Love',
-    slug: 'eksklusif-elegan',
+    slug: 'eksklusif-serene-love',
     category: 'eksklusif',
     description: 'Nuansa burgundy dan gold dengan ornamen bunga mewah. Menghadirkan kesan premium dan anggun untuk hari istimewamu.',
-    image: '/templates/eksklusif-elegan.png',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmvlcewzalhijhslk/file',
     price: 'Rp 100.000',
     features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
-    url: 'https://serenelove.vercel.app/',
+    url: 'https://serene-love.memoraa-invitation.my.id/',
   },
   {
-    id: 'eksklusif-2',
-    name: 'JAVANESE',
-    slug: 'eksklusif-romantis',
+    id: 'eksklusif-javanese',
+    name: 'Javanese',
+    slug: 'eksklusif-javanese',
     category: 'eksklusif',
     description: 'Sentuhan watercolor floral dengan nuansa dusty rose. Desain penuh cinta yang menceritakan kisah pernikahanmu.',
-    image: '/templates/eksklusif-romantis.png',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmvlcevrv3dvxk5gy/file',
     price: 'Rp 85.000',
     features: ['Animasi Halus', 'Love Story', 'Galery Grid', 'Wishes'],
-    url: 'https://javanese-rosy.vercel.app/',
+    url: 'https://javanese.memoraa-invitation.my.id/',
   },
-
+  {
+    id: 'eksklusif-rose-crimson',
+    name: 'Rose Crimson',
+    slug: 'eksklusif-rose-crimson',
+    category: 'eksklusif',
+    description: 'Nuansa merah crimson yang berani dengan sentuhan floral mewah. Menghadirkan kesan dramatis dan penuh cinta untuk hari istimewamu.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmvlck1s9s0lcucx6/file',
+    price: 'Rp 100.000',
+    features: ['Animasi Halus', 'Video Cover', 'Love Story', 'Wishes'],
+    url: 'https://rose-crimson.memoraa-invitation.my.id/',
+  },
 ];
 
 const categoryConfig = {
@@ -395,7 +416,7 @@ export default function Home() {
               Template Undangan
             </h1>
             <Badge variant="outline" className="text-[10px] font-normal">
-  5 Template
+  7 Template
             </Badge>
           </div>
 
@@ -458,9 +479,9 @@ export default function Home() {
           {/* Stats row */}
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
             {[
-              { label: 'Total Template', value: '5', icon: ImageIcon },
-              { label: 'Template Basic', value: '3', icon: Palette },
-              { label: 'Template Eksklusif', value: '2', icon: Sparkles },
+              { label: 'Total Template', value: '7', icon: ImageIcon },
+              { label: 'Template Basic', value: '4', icon: Palette },
+              { label: 'Template Eksklusif', value: '3', icon: Sparkles },
               { label: 'Perbandingan Paket', value: 'VS', icon: GitCompareArrows },
             ].map((stat) => (
               <div
