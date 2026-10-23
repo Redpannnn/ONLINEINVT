@@ -202,7 +202,7 @@ function TemplateGrid({ category }: { category: 'basic' | 'eksklusif' | 'luxury'
       </div>
 
       {/* Template grid */}
-      <div className="grid grid-cols-3 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5 lg:gap-6">
+      <div className="grid grid-cols-3 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-3 lg:gap-6">
         {filtered.map((template) => (
           <TemplateCard key={template.id} template={template} />
         ))}
