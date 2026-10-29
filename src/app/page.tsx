@@ -40,7 +40,7 @@ const templates: TemplateItem[] = [
     category: 'basic',
     description: 'Nuansa hijau botanical dengan sentuhan daun asri dan kesan natural. Cocok untuk pernikahan bertema alam yang segar dan menenangkan.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmvlceun2mlbcczqk/file',
-    price: 'Rp 40.000',
+    price: 'Rp 30.000',
     features: ['Responsif', 'Musik Latar', 'Galery Foto'],
     url: 'https://greenery-botanical.memoraa-invitation.my.id/',
   },
@@ -51,7 +51,7 @@ const templates: TemplateItem[] = [
     category: 'basic',
     description: 'Desain lembut dengan nuansa floral pastel yang romantis. Pilihan tepat untuk kamu yang menginginkan kesan gentle dan penuh kelembutan.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmvlcexx803qx6fh5/file',
-    price: 'Rp 60.000',
+    price: 'Rp 45.000',
     features: ['Responsif', 'Hitung Mundur', 'Galery Foto'],
     url: 'https://soft-bloom.memoraa-invitation.my.id/',
   },
@@ -62,7 +62,7 @@ const templates: TemplateItem[] = [
     category: 'basic',
     description: 'Sentuhan daun dengan tone earthy yang hangat dan nyaman dipandang. Menghadirkan kesan akrab dan hangat untuk hari bahagiamu.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmvlceynk0cptid6s/file',
-    price: 'Rp 60.000',
+    price: 'Rp 45.000',
     features: ['Responsif', 'Musik Latar', 'Hitung Mundur'],
     url: 'https://warm-leaf.memoraa-invitation.my.id/',
   },
@@ -73,7 +73,7 @@ const templates: TemplateItem[] = [
     category: 'basic',
     description: 'Tema malam yang elegan dengan aksen gelap dramatis dan sentuhan cahaya lembut. Cocok untuk pernikahan dengan kesan modern dan misterius.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmvlck34pu6hqklln/file',
-    price: 'Rp 50.000',
+    price: 'Rp 45.000',
     features: ['Responsif', 'Musik Latar', 'Galery Foto'],
     url: 'https://midnight.memoraa-invitation.my.id/',
   },
@@ -477,7 +477,7 @@ export default function Home() {
           </div>
 
           {/* Stats row */}
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             {[
               { label: 'Total Template', value: '7', icon: ImageIcon },
               { label: 'Template Basic', value: '4', icon: Palette },
@@ -486,20 +486,13 @@ export default function Home() {
             ].map((stat) => (
               <div
                 key={stat.label}
-                className={cn(
-                  'flex items-center gap-3 rounded-xl border border-border/40 bg-card p-4',
-                  stat.label === 'Perbandingan Paket' && 'cursor-pointer transition-all hover:ring-2 hover:ring-primary/30 hover:ring-offset-2 hover:ring-offset-background'
-                )}
-                onClick={stat.label === 'Perbandingan Paket' ? () => setComparisonExpanded(!comparisonExpanded) : undefined}
+                className="flex items-center gap-3 rounded-xl border border-border/40 bg-card p-4"
               >
-                <div className={cn(
-                  'flex h-10 w-10 shrink-0 items-center justify-center rounded-lg',
-                  stat.label === 'Perbandingan Paket' ? 'bg-primary text-primary-foreground' : 'bg-primary/10'
-                )}>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                   <stat.icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className={cn('font-bold', stat.label === 'Perbandingan Paket' ? 'text-lg' : 'text-xl')}>{stat.value}</p>
+                  <p className="text-xl font-bold">{stat.value}</p>
                   <p className="text-xs text-muted-foreground">
                     {stat.label}
                   </p>
