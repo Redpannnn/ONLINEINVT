@@ -110,6 +110,17 @@ const templates: TemplateItem[] = [
     features: ['Animasi Halus', 'Video Cover', 'Love Story', 'Wishes'],
     url: 'https://rose-crimson.memoraa-invitation.my.id/',
   },
+  {
+    id: 'eksklusif-royal-heritage',
+    name: 'Royal Heritage',
+    slug: 'eksklusif-royal-heritage',
+    category: 'eksklusif',
+    description: 'Sentuhan klasik bergaya kerajaan dengan ornamen emas mewah. Menghadirkan kemegahan penuh prestise untuk hari istimewamu.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmw0l63mj2171rtuh/file',
+    price: 'Rp 85.000',
+    features: ['Animasi Halus', 'Video Cover', 'RSVP', 'Wishes'],
+    url: 'https://royal-heritage.memoraa-invitation.my.id/',
+  },
 ];
 
 const categoryConfig = {
@@ -416,7 +427,7 @@ export default function Home() {
               Template Undangan
             </h1>
             <Badge variant="outline" className="text-[10px] font-normal">
-  7 Template
+  8 Template
             </Badge>
           </div>
 
@@ -479,9 +490,9 @@ export default function Home() {
           {/* Stats row */}
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             {[
-              { label: 'Total Template', value: '7', icon: ImageIcon },
+              { label: 'Total Template', value: '8', icon: ImageIcon },
               { label: 'Template Basic', value: '4', icon: Palette },
-              { label: 'Template Eksklusif', value: '3', icon: Sparkles },
+              { label: 'Template Eksklusif', value: '4', icon: Sparkles },
               { label: 'Perbandingan Paket', value: 'VS', icon: GitCompareArrows },
             ].map((stat) => (
               <div
