@@ -108,7 +108,7 @@ const templates: TemplateItem[] = [
     image: 'https://imglinkv-3.vercel.app/api/images/cmvlcevrv3dvxk5gy/file',
     price: 'Rp 85.000',
     features: ['Animasi Halus', 'Love Story', 'Galery Grid', 'Wishes'],
-    url: 'https://javanese.memoraa-invitation.my.id/',
+    url: 'https://javanese-traditional.memoraa-invitation.my.id/',
   },
   {
     id: 'eksklusif-rose-crimson',
