@@ -89,6 +89,17 @@ const templates: TemplateItem[] = [
     url: 'https://doodle-love.memoraa-invitation.my.id/',
   },
   {
+    id: 'basic-sweet-chibi',
+    name: 'Sweet Chibi',
+    slug: 'basic-sweet-chibi',
+    category: 'basic',
+    description: 'Karakter chibi menggemaskan dengan nuansa pastel yang manis. Pilihan pas untuk kamu yang ingin kesan adorable dan penuh kejutan.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmw3nx9z4tyfe19ch/file',
+    price: 'Rp 40.000',
+    features: ['Responsif', 'Musik Latar', 'Hitung Mundur'],
+    url: 'https://sweet-chibi.memoraa-invitation.my.id/',
+  },
+  {
     id: 'eksklusif-serene',
     name: 'Serene Love',
     slug: 'eksklusif-serene-love',
@@ -438,7 +449,7 @@ export default function Home() {
               Template Undangan
             </h1>
             <Badge variant="outline" className="text-[10px] font-normal">
-  9 Template
+  10 Template
             </Badge>
           </div>
 
@@ -501,8 +512,8 @@ export default function Home() {
           {/* Stats row */}
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             {[
-              { label: 'Total Template', value: '9', icon: ImageIcon },
-              { label: 'Template Basic', value: '5', icon: Palette },
+              { label: 'Total Template', value: '10', icon: ImageIcon },
+              { label: 'Template Basic', value: '6', icon: Palette },
               { label: 'Template Eksklusif', value: '4', icon: Sparkles },
               { label: 'Perbandingan Paket', value: 'VS', icon: GitCompareArrows },
             ].map((stat) => (
