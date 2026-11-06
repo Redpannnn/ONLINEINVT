@@ -100,6 +100,17 @@ const templates: TemplateItem[] = [
     url: 'https://sweet-chibi.memoraa-invitation.my.id/',
   },
   {
+    id: 'basic-secret-garden',
+    name: 'Secret Garden',
+    slug: 'basic-secret-garden',
+    category: 'basic',
+    description: 'Taman rahasia yang penuh bunga dan dedaunan dengan suasana romantis. Menghadirkan kesan memesona untuk hari bahagiamu.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmw55zkaxxqqs9tl8/file',
+    price: 'Rp 50.000',
+    features: ['Responsif', 'Musik Latar', 'Galery Foto'],
+    url: 'https://secret-garden.memoraa-invitation.my.id/',
+  },
+  {
     id: 'eksklusif-serene',
     name: 'Serene Love',
     slug: 'eksklusif-serene-love',
@@ -449,7 +460,7 @@ export default function Home() {
               Template Undangan
             </h1>
             <Badge variant="outline" className="text-[10px] font-normal">
-  10 Template
+  11 Template
             </Badge>
           </div>
 
@@ -512,8 +523,8 @@ export default function Home() {
           {/* Stats row */}
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             {[
-              { label: 'Total Template', value: '10', icon: ImageIcon },
-              { label: 'Template Basic', value: '6', icon: Palette },
+              { label: 'Total Template', value: '11', icon: ImageIcon },
+              { label: 'Template Basic', value: '7', icon: Palette },
               { label: 'Template Eksklusif', value: '4', icon: Sparkles },
               { label: 'Perbandingan Paket', value: 'VS', icon: GitCompareArrows },
             ].map((stat) => (
