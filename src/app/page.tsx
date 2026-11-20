@@ -14,6 +14,7 @@ import {
   Check,
   X,
   Minus,
+  ChevronDown,
   GitCompareArrows,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -120,6 +121,28 @@ const templates: TemplateItem[] = [
     price: 'Rp 40.000',
     features: ['Responsif', 'Musik Latar', 'Galery Foto'],
     url: 'https://blue-vintage.memoraa-invitation.my.id/',
+  },
+  {
+    id: 'basic-lovely-maroon',
+    name: 'Lovely Maroon',
+    slug: 'basic-lovely-maroon',
+    category: 'basic',
+    description: 'Nuansa maroon yang manis dengan aksen hati dan tipografi script yang romantis. Menghadirkan kesan hangat dan penuh cinta untuk hari bahagiamu.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmwphsltfjnr4akvl/file',
+    price: 'Rp 35.000',
+    features: ['Responsif', 'Musik Latar', 'Galery Foto'],
+    url: 'https://lovely-maroon.memoraa-invitation.my.id/',
+  },
+  {
+    id: 'basic-cheerful-love',
+    name: 'Cheerful Love',
+    slug: 'basic-cheerful-love',
+    category: 'basic',
+    description: 'Desain ceria dengan warna pink coral dan doodle hati yang playful. Pilihan pas untuk pasangan yang ingin suasana fun, cheerful, dan penuh warna.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmwphskemwndwth4m/file',
+    price: 'Rp 35.000',
+    features: ['Responsif', 'Hitung Mundur', 'Galery Foto'],
+    url: 'https://cheerful-love.memoraa-invitation.my.id/',
   },
   {
     id: 'eksklusif-serene',
@@ -371,7 +394,12 @@ function ComparisonCell({ value }: { value: CellValue }) {
 
 function ComparisonTable({ expanded }: { expanded: boolean }) {
   return (
-    <div className="rounded-2xl border border-border/40 bg-card overflow-hidden">
+    <div
+      className={cn(
+        'overflow-hidden rounded-2xl border bg-card transition-colors duration-300',
+        expanded ? 'border-border/40' : 'border-transparent'
+      )}
+    >
       {/* Collapsible content */}
       <div
         className={cn(
@@ -482,8 +510,7 @@ export default function Home() {
               Template Undangan
             </h1>
             <Badge variant="outline" className="text-[10px] font-normal">
-  12 Template
-  13 Template
+              {templates.length} Template
             </Badge>
           </div>
 
@@ -544,17 +571,15 @@ export default function Home() {
           </div>
 
           {/* Stats row */}
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
             {[
-              { label: 'Total Template', value: '12', icon: ImageIcon },
-              { label: 'Total Template', value: '13', icon: ImageIcon },
-              { label: 'Template Basic', value: '8', icon: Palette },
-              { label: 'Template Eksklusif', value: '4', icon: Sparkles },
-              { label: 'Template Eksklusif', value: '5', icon: Sparkles },
-              { label: 'Perbandingan Paket', value: 'VS', icon: GitCompareArrows },
+              { id: 'stat-total', label: 'Total Template', value: `${templates.length}`, icon: ImageIcon },
+              { id: 'stat-basic', label: 'Template Basic', value: `${templates.filter((t) => t.category === 'basic').length}`, icon: Palette },
+              { id: 'stat-eksklusif', label: 'Template Eksklusif', value: `${templates.filter((t) => t.category === 'eksklusif').length}`, icon: Sparkles },
+              { id: 'stat-vs', label: 'Perbandingan Paket', value: 'VS', icon: GitCompareArrows },
             ].map((stat) => (
               <div
-                key={stat.label}
+                key={stat.id}
                 className="flex items-center gap-3 rounded-xl border border-border/40 bg-card p-4"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
@@ -571,6 +596,28 @@ export default function Home() {
           </div>
 
           {/* Package Comparison - collapsible */}
+          <button
+            type="button"
+            onClick={() => setComparisonExpanded(!comparisonExpanded)}
+            aria-expanded={comparisonExpanded}
+            className="flex w-full items-center justify-between rounded-2xl border border-border/40 bg-card px-4 py-3 text-left transition-colors hover:bg-muted/30 md:px-5 md:py-4"
+          >
+            <span className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+                <GitCompareArrows className="h-5 w-5" />
+              </span>
+              <span className="flex flex-col">
+                <span className="font-serif text-base font-bold md:text-lg">Perbandingan Paket</span>
+                <span className="text-xs text-muted-foreground">Bandingkan fitur Basic vs Eksklusif</span>
+              </span>
+            </span>
+            <ChevronDown
+              className={cn(
+                'h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-300',
+                comparisonExpanded && 'rotate-180'
+              )}
+            />
+          </button>
           <ComparisonTable expanded={comparisonExpanded} />
 
           {/* Tabs for template categories */}
