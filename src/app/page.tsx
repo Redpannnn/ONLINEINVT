@@ -35,15 +35,15 @@ interface TemplateItem {
 
 const templates: TemplateItem[] = [
   {
-    id: 'basic-greenery',
-    name: 'Greenery Botanical',
-    slug: 'basic-greenery-botanical',
+    id: 'basic-autumn-minang',
+    name: 'Autumn Minang',
+    slug: 'basic-autumn-minang',
     category: 'basic',
-    description: 'Nuansa hijau botanical dengan sentuhan daun asri dan kesan natural. Cocok untuk pernikahan bertema alam yang segar dan menenangkan.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmvlceun2mlbcczqk/file',
-    price: 'Rp 30.000',
+    description: 'Nuansa autumn yang hangat dengan sentuhan budaya Minangkabau. Menghadirkan kesan alami, hangat, dan penuh cinta untuk hari bahagiamu.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmwr06obkkr0w0wzi/file',
+    price: 'Rp 40.000',
     features: ['Responsif', 'Musik Latar', 'Galery Foto'],
-    url: 'https://greenery-botanical.memoraa-invitation.my.id/',
+    url: 'https://autumn-minang.memoraa-invitation.my.id/',
   },
   {
     id: 'basic-soft-bloom',
@@ -209,6 +209,17 @@ const templates: TemplateItem[] = [
     price: 'Rp 50.000',
     features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
     url: 'https://hendra-eci.memoraa-invitation.my.id/',
+  },
+  {
+    id: 'eksklusif-terracota-minang',
+    name: 'Terracota Minang',
+    slug: 'eksklusif-terracota-minang',
+    category: 'eksklusif',
+    description: 'Nuansa terracota dengan sentuhan ornamen khas Minangkabau. Menghadirkan kesan elegan, hangat, dan berbudaya untuk hari istimewamu.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmwr06pvcg0jvj7b8/file',
+    price: 'Rp 50.000',
+    features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
+    url: 'https://terracota-minang.memoraa-invitation.my.id/',
   },
 ];
 
