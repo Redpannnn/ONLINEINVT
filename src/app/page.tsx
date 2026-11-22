@@ -221,6 +221,17 @@ const templates: TemplateItem[] = [
     features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
     url: 'https://terracota-minang.memoraa-invitation.my.id/',
   },
+  {
+    id: 'eksklusif-javanese-terrace',
+    name: 'Javanese Terrace',
+    slug: 'eksklusif-javanese-terrace',
+    category: 'eksklusif',
+    description: 'Nuansa teras Jawa yang asri dengan ornamen khas budaya Jawa. Menghadirkan kesan tenang, anggun, dan penuh kehangatan untuk hari istimewamu.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmws9t56xii52md5f/file',
+    price: 'Rp 50.000',
+    features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
+    url: 'https://javanese-terrace.memoraa-invitation.my.id/',
+  },
 ];
 
 const categoryConfig = {
