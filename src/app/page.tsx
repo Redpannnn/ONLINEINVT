@@ -5,27 +5,28 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
-  Palette,
   ImageIcon,
-  Sparkles,
   ArrowLeft,
   Sun,
   Moon,
-  Check,
-  X,
-  Minus,
-  ChevronDown,
-  GitCompareArrows,
+  Landmark,
+  Feather,
+  Brush,
+  Gem,
+  Camera,
 } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
 
 /* ─── data ─── */
+type TemplateCategory = 'adat' | 'minimalis' | 'ilustrasi' | 'luxury' | 'photo-series';
+
 interface TemplateItem {
   id: string;
   name: string;
   slug: string;
-  category: 'basic' | 'eksklusif' | 'luxury';
+  category: TemplateCategory;
   description: string;
   image: string;
   price: string;
@@ -38,7 +39,7 @@ const templates: TemplateItem[] = [
     id: 'basic-autumn-minang',
     name: 'Autumn Minang',
     slug: 'basic-autumn-minang',
-    category: 'basic',
+    category: 'adat',
     description: 'Nuansa autumn yang hangat dengan sentuhan budaya Minangkabau. Menghadirkan kesan alami, hangat, dan penuh cinta untuk hari bahagiamu.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmwr06obkkr0w0wzi/file',
     price: 'Rp 40.000',
@@ -49,7 +50,7 @@ const templates: TemplateItem[] = [
     id: 'basic-soft-bloom',
     name: 'Soft Bloom',
     slug: 'basic-soft-bloom',
-    category: 'basic',
+    category: 'minimalis',
     description: 'Desain lembut dengan nuansa floral pastel yang romantis. Pilihan tepat untuk kamu yang menginginkan kesan gentle dan penuh kelembutan.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmvlcexx803qx6fh5/file',
     price: 'Rp 45.000',
@@ -60,7 +61,7 @@ const templates: TemplateItem[] = [
     id: 'basic-cheerful-love',
     name: 'Cheerful Love',
     slug: 'basic-cheerful-love',
-    category: 'basic',
+    category: 'ilustrasi',
     description: 'Desain ceria dengan warna pink coral dan doodle hati yang playful. Pilihan pas untuk pasangan yang ingin suasana fun, cheerful, dan penuh warna.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmwphskemwndwth4m/file',
     price: 'Rp 35.000',
@@ -71,7 +72,7 @@ const templates: TemplateItem[] = [
     id: 'basic-midnight',
     name: 'Midnight',
     slug: 'basic-midnight',
-    category: 'basic',
+    category: 'minimalis',
     description: 'Tema malam yang elegan dengan aksen gelap dramatis dan sentuhan cahaya lembut. Cocok untuk pernikahan dengan kesan modern dan misterius.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmvlck34pu6hqklln/file',
     price: 'Rp 45.000',
@@ -82,7 +83,7 @@ const templates: TemplateItem[] = [
     id: 'basic-doodle-love',
     name: 'Doodle Love',
     slug: 'basic-doodle-love',
-    category: 'basic',
+    category: 'ilustrasi',
     description: 'Desain playful dengan ilustrasi doodle lucu dan penuh warna. Cocok untuk pasangan yang menginginkan kesan ceria dan menggemaskan.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmw0mwnzf6z2blxi2/file',
     price: 'Rp 35.000',
@@ -93,7 +94,7 @@ const templates: TemplateItem[] = [
     id: 'basic-sweet-chibi',
     name: 'Sweet Chibi',
     slug: 'basic-sweet-chibi',
-    category: 'basic',
+    category: 'ilustrasi',
     description: 'Karakter chibi menggemaskan dengan nuansa pastel yang manis. Pilihan pas untuk kamu yang ingin kesan adorable dan penuh kejutan.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmw3nx9z4tyfe19ch/file',
     price: 'Rp 40.000',
@@ -104,7 +105,7 @@ const templates: TemplateItem[] = [
     id: 'basic-secret-garden',
     name: 'Secret Garden',
     slug: 'basic-secret-garden',
-    category: 'basic',
+    category: 'ilustrasi',
     description: 'Taman rahasia yang penuh bunga dan dedaunan dengan suasana romantis. Menghadirkan kesan memesona untuk hari bahagiamu.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmw55zkaxxqqs9tl8/file',
     price: 'Rp 50.000',
@@ -115,7 +116,7 @@ const templates: TemplateItem[] = [
     id: 'basic-blue-vintage',
     name: 'Blue Vintage',
     slug: 'basic-blue-vintage',
-    category: 'basic',
+    category: 'photo-series',
     description: 'Nuansa vintage dengan tone biru klasik yang elegan dan tenang. Menghadirkan kesan romantis yang timeless untuk hari bahagiamu.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmwabnjn2kv068yw9/file',
     price: 'Rp 40.000',
@@ -126,7 +127,7 @@ const templates: TemplateItem[] = [
     id: 'basic-lovely-maroon',
     name: 'Lovely Maroon',
     slug: 'basic-lovely-maroon',
-    category: 'basic',
+    category: 'ilustrasi',
     description: 'Nuansa maroon yang manis dengan aksen hati dan tipografi script yang romantis. Menghadirkan kesan hangat dan penuh cinta untuk hari bahagiamu.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmwphsltfjnr4akvl/file',
     price: 'Rp 35.000',
@@ -137,7 +138,7 @@ const templates: TemplateItem[] = [
     id: 'basic-warm-leaf',
     name: 'Warm Leaf',
     slug: 'basic-warm-leaf',
-    category: 'basic',
+    category: 'minimalis',
     description: 'Sentuhan daun dengan tone earthy yang hangat dan nyaman dipandang. Menghadirkan kesan akrab dan hangat untuk hari bahagiamu.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmvlceynk0cptid6s/file',
     price: 'Rp 45.000',
@@ -148,7 +149,7 @@ const templates: TemplateItem[] = [
     id: 'basic-crimson-velvet',
     name: 'Crimson Velvet',
     slug: 'basic-crimson-velvet',
-    category: 'basic',
+    category: 'luxury',
     description: 'Latar beludru crimson yang mewah dengan amplop bersegel lilin yang elegan. Menghadirkan kesan klasik, dramatis, dan penuh kemewahan untuk hari istimewamu.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmwplae9d21wsi9pv/file',
     price: 'Rp 35.000',
@@ -159,7 +160,7 @@ const templates: TemplateItem[] = [
     id: 'eksklusif-serene',
     name: 'Serene Love',
     slug: 'eksklusif-serene-love',
-    category: 'eksklusif',
+    category: 'adat',
     description: 'Nuansa burgundy dan gold dengan ornamen bunga mewah. Menghadirkan kesan premium dan anggun untuk hari istimewamu.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmvlcewzalhijhslk/file',
     price: 'Rp 50.000',
@@ -170,7 +171,7 @@ const templates: TemplateItem[] = [
     id: 'eksklusif-javanese',
     name: 'Javanese',
     slug: 'eksklusif-javanese',
-    category: 'eksklusif',
+    category: 'adat',
     description: 'Sentuhan watercolor floral dengan nuansa dusty rose. Desain penuh cinta yang menceritakan kisah pernikahanmu.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmvlcevrv3dvxk5gy/file',
     price: 'Rp 45.000',
@@ -181,7 +182,7 @@ const templates: TemplateItem[] = [
     id: 'eksklusif-rose-crimson',
     name: 'Rose Crimson',
     slug: 'eksklusif-rose-crimson',
-    category: 'eksklusif',
+    category: 'luxury',
     description: 'Nuansa merah crimson yang berani dengan sentuhan floral mewah. Menghadirkan kesan dramatis dan penuh cinta untuk hari istimewamu.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmvlck1s9s0lcucx6/file',
     price: 'Rp 50.000',
@@ -192,7 +193,7 @@ const templates: TemplateItem[] = [
     id: 'eksklusif-royal-heritage',
     name: 'Royal Heritage',
     slug: 'eksklusif-royal-heritage',
-    category: 'eksklusif',
+    category: 'adat',
     description: 'Sentuhan klasik bergaya kerajaan dengan ornamen emas mewah. Menghadirkan kemegahan penuh prestise untuk hari istimewamu.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmw0l63mj2171rtuh/file',
     price: 'Rp 45.000',
@@ -203,7 +204,7 @@ const templates: TemplateItem[] = [
     id: 'eksklusif-paleja',
     name: 'Paleja',
     slug: 'eksklusif-paleja',
-    category: 'eksklusif',
+    category: 'adat',
     description: 'Nuansa maroon dan emas dengan ornamen bunga klasik tradisional. Menghadirkan kesan anggun dan sakral untuk hari istimewamu.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmwm9909qta3ks3em/file',
     price: 'Rp 50.000',
@@ -214,7 +215,7 @@ const templates: TemplateItem[] = [
     id: 'eksklusif-terracota-minang',
     name: 'Terracota Minang',
     slug: 'eksklusif-terracota-minang',
-    category: 'eksklusif',
+    category: 'adat',
     description: 'Nuansa terracota dengan sentuhan ornamen khas Minangkabau. Menghadirkan kesan elegan, hangat, dan berbudaya untuk hari istimewamu.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmwr06pvcg0jvj7b8/file',
     price: 'Rp 50.000',
@@ -225,7 +226,7 @@ const templates: TemplateItem[] = [
     id: 'eksklusif-javanese-terrace',
     name: 'Javanese Terrace',
     slug: 'eksklusif-javanese-terrace',
-    category: 'eksklusif',
+    category: 'adat',
     description: 'Nuansa teras Jawa yang asri dengan ornamen khas budaya Jawa. Menghadirkan kesan tenang, anggun, dan penuh kehangatan untuk hari istimewamu.',
     image: 'https://imglinkv-3.vercel.app/api/images/cmws9t56xii52md5f/file',
     price: 'Rp 50.000',
@@ -234,26 +235,60 @@ const templates: TemplateItem[] = [
   },
 ];
 
-const categoryConfig = {
-  basic: {
-    label: 'Template Basic',
-    icon: Palette,
+const categoryConfig: Record<
+  TemplateCategory,
+  { label: string; shortLabel: string; icon: LucideIcon; color: string; desc: string }
+> = {
+  adat: {
+    label: 'Template Adat',
+    shortLabel: 'Adat',
+    icon: Landmark,
+    color: 'bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-950/50 dark:text-amber-300 dark:border-amber-800',
+    desc: 'Nuansa tradisional khas budaya Nusantara',
+  },
+  minimalis: {
+    label: 'Template Minimalis',
+    shortLabel: 'Minimalis',
+    icon: Feather,
     color: 'bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-950/50 dark:text-emerald-300 dark:border-emerald-800',
-    desc: 'Template gratis yang simpel dan elegan',
+    desc: 'Desain sederhana, bersih, dan elegan',
   },
-  eksklusif: {
-    label: 'Template Eksklusif',
-    icon: Sparkles,
+  ilustrasi: {
+    label: 'Template Ilustrasi',
+    shortLabel: 'Ilustrasi',
+    icon: Brush,
+    color: 'bg-fuchsia-100 text-fuchsia-700 border-fuchsia-200 dark:bg-fuchsia-950/50 dark:text-fuchsia-300 dark:border-fuchsia-800',
+    desc: 'Ilustrasi ceria yang playful dan menggemaskan',
+  },
+  luxury: {
+    label: 'Template Luxury',
+    shortLabel: 'Luxury',
+    icon: Gem,
     color: 'bg-rose-100 text-rose-700 border-rose-200 dark:bg-rose-950/50 dark:text-rose-300 dark:border-rose-800',
-    desc: 'Desain eksklusif dengan fitur lengkap',
+    desc: 'Desain mewah dengan sentuhan premium',
   },
-
+  'photo-series': {
+    label: 'Template Photo Series',
+    shortLabel: 'Photo',
+    icon: Camera,
+    color: 'bg-sky-100 text-sky-700 border-sky-200 dark:bg-sky-950/50 dark:text-sky-300 dark:border-sky-800',
+    desc: 'Seri foto berkesan dengan nuansa sinematik',
+  },
 };
+
+const categoryOrder: TemplateCategory[] = [
+  'adat',
+  'minimalis',
+  'ilustrasi',
+  'luxury',
+  'photo-series',
+];
 
 /* ─── components ─── */
 
 function TemplateCard({ template }: { template: TemplateItem }) {
   const config = categoryConfig[template.category];
+  const CategoryIcon = config.icon;
 
   return (
     <a
@@ -289,10 +324,7 @@ function TemplateCard({ template }: { template: TemplateItem }) {
               config.color
             )}
           >
-            {template.category === 'eksklusif' && (
-              <Sparkles className="h-2 w-2 sm:h-3 sm:w-3" />
-            )}
-            {template.category === 'basic' && <Palette className="h-2 w-2 sm:h-3 sm:w-3" />}
+            <CategoryIcon className="h-2 w-2 sm:h-3 sm:w-3" />
             {config.label.replace('Template ', '')}
           </Badge>
         </div>
@@ -326,7 +358,7 @@ function TemplateCard({ template }: { template: TemplateItem }) {
   );
 }
 
-function TemplateGrid({ category }: { category: 'basic' | 'eksklusif' | 'luxury' }) {
+function TemplateGrid({ category }: { category: TemplateCategory }) {
   const filtered = templates.filter((t) => t.category === category);
   const config = categoryConfig[category];
   const Icon = config.icon;
@@ -354,164 +386,10 @@ function TemplateGrid({ category }: { category: 'basic' | 'eksklusif' | 'luxury'
   );
 }
 
-/* ─── comparison data ─── */
-type CellValue = boolean | string | { check: boolean; note: string };
-
-interface ComparisonFeature {
-  name: string;
-  basic: CellValue;
-  eksklusif: CellValue;
-}
-
-const comparisonFeatures: ComparisonFeature[] = [
-  { name: 'Desain Responsif', basic: true, eksklusif: true },
-  { name: 'Musik Latar', basic: true, eksklusif: true },
-  { name: 'Galeri Foto', basic: 'Maks. 3', eksklusif: 'Unlimited' },
-  { name: 'Hitung Mundur', basic: true, eksklusif: true },
-  { name: 'Amplop Digital', basic: false, eksklusif: true },
-  { name: 'RSVP Online', basic: false, eksklusif: true },
-  { name: 'Peta Lokasi', basic: 'Link Statis', eksklusif: 'Interaktif' },
-  { name: 'Animasi', basic: 'Dasar', eksklusif: 'Premium' },
-  { name: 'Video Cover', basic: false, eksklusif: true },
-  { name: 'Love Story', basic: false, eksklusif: true },
-  { name: 'Ucapan & Wishes', basic: false, eksklusif: true },
-  { name: 'Custom Domain', basic: { check: false, note: 'memoraa-invitation.my.id/namamempelai' }, eksklusif: { check: true, note: 'namamempelai.my.id' } },
-];
-
-function ComparisonCell({ value }: { value: CellValue }) {
-  if (typeof value === 'boolean') {
-    if (value === true) {
-      return (
-        <div className="flex items-center justify-center">
-          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-950/60">
-            <Check className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" strokeWidth={3} />
-          </div>
-        </div>
-      );
-    }
-    return (
-      <div className="flex items-center justify-center">
-        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-50 dark:bg-red-950/40">
-          <X className="h-3.5 w-3.5 text-red-400 dark:text-red-500" strokeWidth={2.5} />
-        </div>
-      </div>
-    );
-  }
-  if (typeof value === 'string') {
-    return (
-      <span className="text-center text-xs font-medium text-muted-foreground">
-        {value}
-      </span>
-    );
-  }
-  // Object with check icon + note
-  return (
-    <div className="flex flex-col items-center gap-1">
-      <div className="flex items-center justify-center">
-        {value.check ? (
-          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-950/60">
-            <Check className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" strokeWidth={3} />
-          </div>
-        ) : (
-          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-50 dark:bg-red-950/40">
-            <X className="h-3.5 w-3.5 text-red-400 dark:text-red-500" strokeWidth={2.5} />
-          </div>
-        )}
-      </div>
-      <span className="max-w-[140px] text-center text-[10px] leading-tight text-muted-foreground">
-        {value.note}
-      </span>
-    </div>
-  );
-}
-
-function ComparisonTable({ expanded }: { expanded: boolean }) {
-  return (
-    <div
-      className={cn(
-        'overflow-hidden rounded-2xl border bg-card transition-colors duration-300',
-        expanded ? 'border-border/40' : 'border-transparent'
-      )}
-    >
-      {/* Collapsible content */}
-      <div
-        className={cn(
-          'grid transition-all duration-300 ease-in-out',
-          expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-        )}
-      >
-        <div className="overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-border/40">
-                  <th className="px-3 py-2.5 text-left text-[10px] font-semibold text-muted-foreground md:px-4 md:py-3">
-                    Fitur
-                  </th>
-                  <th className="px-3 py-2.5 text-center text-[10px] font-semibold md:px-4 md:py-3">
-                    <div className="flex flex-col items-center gap-0.5">
-                      <div className="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-100 dark:bg-emerald-950/50">
-                        <Palette className="h-3 w-3 text-emerald-600 dark:text-emerald-400" />
-                      </div>
-                      <span className="text-emerald-700 dark:text-emerald-300">Basic</span>
-                      <span className="text-[9px] text-muted-foreground">Rp 40.000</span>
-                    </div>
-                  </th>
-                  <th className="px-3 py-2.5 text-center text-[10px] font-semibold md:px-4 md:py-3">
-                    <div className="flex flex-col items-center gap-0.5">
-                      <div className="flex h-6 w-6 items-center justify-center rounded-md bg-rose-100 dark:bg-rose-950/50">
-                        <Sparkles className="h-3 w-3 text-rose-600 dark:text-rose-400" />
-                      </div>
-                      <span className="text-rose-700 dark:text-rose-300">Eksklusif</span>
-                      <span className="text-[9px] text-muted-foreground">Rp 100.000</span>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonFeatures.map((feature, idx) => (
-                  <tr
-                    key={feature.name}
-                    className={cn(
-                      'border-b border-border/20 transition-colors hover:bg-muted/30',
-                      idx === comparisonFeatures.length - 1 && 'border-b-0'
-                    )}
-                  >
-                    <td className="px-3 py-2.5 text-[11px] font-medium md:px-4 md:py-3">
-                      <span className="flex items-center gap-1.5">
-                        <Minus className="h-1 w-3 text-muted-foreground/40" />
-                        {feature.name}
-                      </span>
-                    </td>
-                    <td className="px-3 py-2.5 md:px-4 md:py-3">
-                      <ComparisonCell value={feature.basic} />
-                    </td>
-                    <td className="px-3 py-2.5 md:px-4 md:py-3">
-                      <ComparisonCell value={feature.eksklusif} />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Footer CTA */}
-          <div className="border-t border-border/40 p-3 md:p-4">
-            <p className="text-center text-[10px] text-muted-foreground">
-              Butuh fitur lebih lengkap? Pilih paket <span className="font-semibold text-rose-600 dark:text-rose-400">Eksklusif</span> untuk pengalaman terbaik.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 /* ─── main page ─── */
 export default function Home() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [comparisonExpanded, setComparisonExpanded] = useState(false);
 
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setMounted(true); }, []);
@@ -604,23 +482,25 @@ export default function Home() {
           </div>
 
           {/* Stats row */}
-          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 xl:grid-cols-6">
             {[
               { id: 'stat-total', label: 'Total Template', value: `${templates.length}`, icon: ImageIcon },
-              { id: 'stat-basic', label: 'Template Basic', value: `${templates.filter((t) => t.category === 'basic').length}`, icon: Palette },
-              { id: 'stat-eksklusif', label: 'Template Eksklusif', value: `${templates.filter((t) => t.category === 'eksklusif').length}`, icon: Sparkles },
-              { id: 'stat-vs', label: 'Perbandingan Paket', value: 'VS', icon: GitCompareArrows },
+              { id: 'stat-adat', label: 'Template Adat', value: `${templates.filter((t) => t.category === 'adat').length}`, icon: Landmark },
+              { id: 'stat-minimalis', label: 'Template Minimalis', value: `${templates.filter((t) => t.category === 'minimalis').length}`, icon: Feather },
+              { id: 'stat-ilustrasi', label: 'Template Ilustrasi', value: `${templates.filter((t) => t.category === 'ilustrasi').length}`, icon: Brush },
+              { id: 'stat-luxury', label: 'Template Luxury', value: `${templates.filter((t) => t.category === 'luxury').length}`, icon: Gem },
+              { id: 'stat-photo-series', label: 'Template Photo Series', value: `${templates.filter((t) => t.category === 'photo-series').length}`, icon: Camera },
             ].map((stat) => (
               <div
                 key={stat.id}
-                className="flex items-center gap-3 rounded-xl border border-border/40 bg-card p-4"
+                className="flex items-center gap-2 rounded-xl border border-border/40 bg-card p-2.5 sm:gap-3 sm:p-4"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                  <stat.icon className="h-5 w-5" />
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 sm:h-10 sm:w-10">
+                  <stat.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
-                <div>
-                  <p className="text-xl font-bold">{stat.value}</p>
-                  <p className="text-xs text-muted-foreground">
+                <div className="min-w-0">
+                  <p className="text-base font-bold sm:text-xl">{stat.value}</p>
+                  <p className="text-[10px] leading-tight text-muted-foreground sm:text-xs">
                     {stat.label}
                   </p>
                 </div>
@@ -628,60 +508,31 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Package Comparison - collapsible */}
-          <button
-            type="button"
-            onClick={() => setComparisonExpanded(!comparisonExpanded)}
-            aria-expanded={comparisonExpanded}
-            className="flex w-full items-center justify-between rounded-2xl border border-border/40 bg-card px-4 py-3 text-left transition-colors hover:bg-muted/30 md:px-5 md:py-4"
-          >
-            <span className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
-                <GitCompareArrows className="h-5 w-5" />
-              </span>
-              <span className="flex flex-col">
-                <span className="font-serif text-base font-bold md:text-lg">Perbandingan Paket</span>
-                <span className="text-xs text-muted-foreground">Bandingkan fitur Basic vs Eksklusif</span>
-              </span>
-            </span>
-            <ChevronDown
-              className={cn(
-                'h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-300',
-                comparisonExpanded && 'rotate-180'
-              )}
-            />
-          </button>
-          <ComparisonTable expanded={comparisonExpanded} />
-
           {/* Tabs for template categories */}
-          <Tabs defaultValue="basic" className="w-full">
-            <TabsList className="w-full justify-start bg-muted/50 p-1">
-              <TabsTrigger
-                value="basic"
-                className="gap-1.5 data-[state=active]:bg-card"
-              >
-                <Palette className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Template Basic</span>
-                <span className="sm:hidden">Basic</span>
-              </TabsTrigger>
-              <TabsTrigger
-                value="eksklusif"
-                className="gap-1.5 data-[state=active]:bg-card"
-              >
-                <Sparkles className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Template Eksklusif</span>
-                <span className="sm:hidden">Eksklusif</span>
-              </TabsTrigger>
-
+          <Tabs defaultValue="adat" className="w-full">
+            <TabsList className="flex w-full bg-muted/50 p-1">
+              {categoryOrder.map((cat) => {
+                const cfg = categoryConfig[cat];
+                const TabIcon = cfg.icon;
+                return (
+                  <TabsTrigger
+                    key={cat}
+                    value={cat}
+                    className="min-w-0 flex-1 gap-1 whitespace-nowrap px-0.5 text-[10px] data-[state=active]:bg-card sm:gap-1.5 sm:px-3 sm:text-sm"
+                  >
+                    <TabIcon className="hidden h-3.5 w-3.5 sm:inline" />
+                    <span className="sm:hidden">{cfg.shortLabel}</span>
+                    <span className="hidden sm:inline">{cfg.label}</span>
+                  </TabsTrigger>
+                );
+              })}
             </TabsList>
 
-            <TabsContent value="basic" className="mt-6">
-              <TemplateGrid category="basic" />
-            </TabsContent>
-            <TabsContent value="eksklusif" className="mt-6">
-              <TemplateGrid category="eksklusif" />
-            </TabsContent>
-
+            {categoryOrder.map((cat) => (
+              <TabsContent key={cat} value={cat} className="mt-6">
+                <TemplateGrid category={cat} />
+              </TabsContent>
+            ))}
           </Tabs>
         </div>
       </main>
