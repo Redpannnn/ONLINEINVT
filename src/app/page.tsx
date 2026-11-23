@@ -233,6 +233,17 @@ const templates: TemplateItem[] = [
     features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
     url: 'https://javanese-terrace.memoraa-invitation.my.id/',
   },
+  {
+    id: 'eksklusif-vintage-peacock',
+    name: 'Vintage Peacock',
+    slug: 'eksklusif-vintage-peacock',
+    category: 'adat',
+    description: 'Nuansa teras Jawa yang asri dengan ornamen khas budaya Jawa. Menghadirkan kesan tenang, anggun, dan penuh kehangatan untuk hari istimewamu.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmwtvnsy0nt6uxuow/file',
+    price: 'Rp 45.000',
+    features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
+    url: 'https://vintage-peacock.memoraa-invitation.my.id/',
+  },
 ];
 
 const categoryConfig: Record<
