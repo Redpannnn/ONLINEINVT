@@ -99,7 +99,7 @@ const templates: TemplateItem[] = [
     image: 'https://imglinkv-3.vercel.app/api/images/cmw3nx9z4tyfe19ch/file',
     price: 'Rp 40.000',
     features: ['Responsif', 'Musik Latar', 'Hitung Mundur'],
-    url: 'https://sweet-chibi.memoraa-invitation.my.id/',
+    url: 'https://bayu-icha.memoraa-invitation.my.id/',
   },
   {
     id: 'basic-secret-garden',
