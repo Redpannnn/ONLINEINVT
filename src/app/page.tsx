@@ -240,35 +240,35 @@ const categoryConfig: Record<
   { label: string; shortLabel: string; icon: LucideIcon; color: string; desc: string }
 > = {
   adat: {
-    label: 'Template Adat',
+    label: 'Adat',
     shortLabel: 'Adat',
     icon: Landmark,
     color: 'bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-950/50 dark:text-amber-300 dark:border-amber-800',
     desc: 'Nuansa tradisional khas budaya Nusantara',
   },
   minimalis: {
-    label: 'Template Minimalis',
+    label: 'Minimalis',
     shortLabel: 'Minimalis',
     icon: Feather,
     color: 'bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-950/50 dark:text-emerald-300 dark:border-emerald-800',
     desc: 'Desain sederhana, bersih, dan elegan',
   },
   ilustrasi: {
-    label: 'Template Ilustrasi',
+    label: 'Ilustrasi',
     shortLabel: 'Ilustrasi',
     icon: Brush,
     color: 'bg-fuchsia-100 text-fuchsia-700 border-fuchsia-200 dark:bg-fuchsia-950/50 dark:text-fuchsia-300 dark:border-fuchsia-800',
     desc: 'Ilustrasi ceria yang playful dan menggemaskan',
   },
   luxury: {
-    label: 'Template Luxury',
+    label: 'Luxury',
     shortLabel: 'Luxury',
     icon: Gem,
     color: 'bg-rose-100 text-rose-700 border-rose-200 dark:bg-rose-950/50 dark:text-rose-300 dark:border-rose-800',
     desc: 'Desain mewah dengan sentuhan premium',
   },
   'photo-series': {
-    label: 'Template Photo Series',
+    label: 'Photo Series',
     shortLabel: 'Photo',
     icon: Camera,
     color: 'bg-sky-100 text-sky-700 border-sky-200 dark:bg-sky-950/50 dark:text-sky-300 dark:border-sky-800',
@@ -485,11 +485,11 @@ export default function Home() {
           <div className="grid grid-cols-3 gap-2 sm:gap-3 xl:grid-cols-6">
             {[
               { id: 'stat-total', label: 'Total Template', value: `${templates.length}`, icon: ImageIcon },
-              { id: 'stat-adat', label: 'Template Adat', value: `${templates.filter((t) => t.category === 'adat').length}`, icon: Landmark },
-              { id: 'stat-minimalis', label: 'Template Minimalis', value: `${templates.filter((t) => t.category === 'minimalis').length}`, icon: Feather },
-              { id: 'stat-ilustrasi', label: 'Template Ilustrasi', value: `${templates.filter((t) => t.category === 'ilustrasi').length}`, icon: Brush },
-              { id: 'stat-luxury', label: 'Template Luxury', value: `${templates.filter((t) => t.category === 'luxury').length}`, icon: Gem },
-              { id: 'stat-photo-series', label: 'Template Photo Series', value: `${templates.filter((t) => t.category === 'photo-series').length}`, icon: Camera },
+              { id: 'stat-adat', label: 'Adat', value: `${templates.filter((t) => t.category === 'adat').length}`, icon: Landmark },
+              { id: 'stat-minimalis', label: 'Minimalis', value: `${templates.filter((t) => t.category === 'minimalis').length}`, icon: Feather },
+              { id: 'stat-ilustrasi', label: 'Ilustrasi', value: `${templates.filter((t) => t.category === 'ilustrasi').length}`, icon: Brush },
+              { id: 'stat-luxury', label: 'Luxury', value: `${templates.filter((t) => t.category === 'luxury').length}`, icon: Gem },
+              { id: 'stat-photo-series', label: 'Photo Series', value: `${templates.filter((t) => t.category === 'photo-series').length}`, icon: Camera },
             ].map((stat) => (
               <div
                 key={stat.id}
