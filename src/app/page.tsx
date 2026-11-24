@@ -69,6 +69,17 @@ const templates: TemplateItem[] = [
     url: 'https://cheerful-love.memoraa-invitation.my.id/',
   },
   {
+    id: 'basic-sketch-art',
+    name: 'Sketch Art',
+    slug: 'basic-sketch-art',
+    category: 'ilustrasi',
+    description: '.',
+    image: 'https://imglinkv-3.vercel.app/api/images/cmwv2qwwzi0ehiwi0/file',
+    price: 'Rp 35.000',
+    features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
+    url: 'https://sketch-art.memoraa-invitation.my.id/',
+  },
+  {
     id: 'basic-midnight',
     name: 'Midnight',
     slug: 'basic-midnight',
@@ -243,17 +254,6 @@ const templates: TemplateItem[] = [
     price: 'Rp 45.000',
     features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
     url: 'https://vintage-peacock.memoraa-invitation.my.id/',
-  },
-  {
-    id: 'basic-sketch-art',
-    name: 'Sketch Art',
-    slug: 'basic-sketch-art',
-    category: 'Ilustrasi',
-    description: '.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmwv2qwwzi0ehiwi0/file',
-    price: 'Rp 35.000',
-    features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
-    url: 'https://sketch-art.memoraa-invitation.my.id/',
   },
 ];
 
