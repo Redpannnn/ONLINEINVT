@@ -250,7 +250,7 @@ const templates: TemplateItem[] = [
     slug: 'eksklusif-vintage-peacock',
     category: 'adat',
     description: 'Nuansa teras Jawa yang asri dengan ornamen khas budaya Jawa. Menghadirkan kesan tenang, anggun, dan penuh kehangatan untuk hari istimewamu.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmwtvnsy0nt6uxuow/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/VINTAGE%20PEACOCK%20COVER.jpg?tr=f-auto,q-80',
     price: 'Rp 45.000',
     features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
     url: 'https://vintage-peacock.memoraa-invitation.my.id/',
