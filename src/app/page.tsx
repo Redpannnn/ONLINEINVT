@@ -96,7 +96,7 @@ const templates: TemplateItem[] = [
     slug: 'basic-doodle-love',
     category: 'ilustrasi',
     description: 'Desain playful dengan ilustrasi doodle lucu dan penuh warna. Cocok untuk pasangan yang menginginkan kesan ceria dan menggemaskan.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmw0mwnzf6z2blxi2/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/DOODLE%20LOVE.jpg?updatedAt=1795642442510',
     price: 'Rp 35.000',
     features: ['Responsif', 'Musik Latar', 'Galery Foto'],
     url: 'https://doodle-love.memoraa-invitation.my.id/',
