@@ -151,7 +151,7 @@ const templates: TemplateItem[] = [
     slug: 'basic-warm-leaf',
     category: 'minimalis',
     description: 'Sentuhan daun dengan tone earthy yang hangat dan nyaman dipandang. Menghadirkan kesan akrab dan hangat untuk hari bahagiamu.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmvlceynk0cptid6s/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/WARM%20LEAF.jpg?updatedAt=1795642442954',
     price: 'Rp 35.000',
     features: ['Responsif', 'Musik Latar', 'Hitung Mundur'],
     url: 'https://warm-leaf.memoraa-invitation.my.id/',
