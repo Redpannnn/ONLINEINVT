@@ -74,7 +74,7 @@ const templates: TemplateItem[] = [
     slug: 'basic-sketch-art',
     category: 'ilustrasi',
     description: '.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmwv2qwwzi0ehiwi0/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/SKETCH%20ART.jpg?updatedAt=1795642443046',
     price: 'Rp 35.000',
     features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
     url: 'https://sketch-art.memoraa-invitation.my.id/',
