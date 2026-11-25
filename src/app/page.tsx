@@ -85,7 +85,7 @@ const templates: TemplateItem[] = [
     slug: 'basic-midnight',
     category: 'minimalis',
     description: 'Tema malam yang elegan dengan aksen gelap dramatis dan sentuhan cahaya lembut. Cocok untuk pernikahan dengan kesan modern dan misterius.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmvlck34pu6hqklln/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/MIDNIGHT.jpg',
     price: 'Rp 35.000',
     features: ['Responsif', 'Musik Latar', 'Galery Foto'],
     url: 'https://midnight.memoraa-invitation.my.id/',
