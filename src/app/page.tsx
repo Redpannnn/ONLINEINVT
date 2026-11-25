@@ -228,7 +228,7 @@ const templates: TemplateItem[] = [
     slug: 'eksklusif-terracota-minang',
     category: 'adat',
     description: 'Nuansa terracota dengan sentuhan ornamen khas Minangkabau. Menghadirkan kesan elegan, hangat, dan berbudaya untuk hari istimewamu.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmwr06pvcg0jvj7b8/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/TERRACOTTA%20MINANG/TERRACOTTA%20MINANG%20COVER.jpg',
     price: 'Rp 50.000',
     features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
     url: 'https://terracota-minang.memoraa-invitation.my.id/',
