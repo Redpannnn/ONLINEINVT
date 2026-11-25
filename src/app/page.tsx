@@ -118,7 +118,7 @@ const templates: TemplateItem[] = [
     slug: 'basic-secret-garden',
     category: 'ilustrasi',
     description: 'Taman rahasia yang penuh bunga dan dedaunan dengan suasana romantis. Menghadirkan kesan memesona untuk hari bahagiamu.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmw55zkaxxqqs9tl8/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/SECRET%20GARDEN.jpg?updatedAt=1795642443032',
     price: 'Rp 35.000',
     features: ['Responsif', 'Musik Latar', 'Galery Foto'],
     url: 'https://secret-garden.memoraa-invitation.my.id/',
