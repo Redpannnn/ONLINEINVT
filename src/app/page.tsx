@@ -63,7 +63,7 @@ const templates: TemplateItem[] = [
     slug: 'basic-cheerful-love',
     category: 'ilustrasi',
     description: 'Desain ceria dengan warna pink coral dan doodle hati yang playful. Pilihan pas untuk pasangan yang ingin suasana fun, cheerful, dan penuh warna.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmwphskemwndwth4m/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/CHEERFUL%20LOVE.jpg?updatedAt=1795642442449',
     price: 'Rp 35.000',
     features: ['Responsif', 'Hitung Mundur', 'Galery Foto'],
     url: 'https://cheerful-love.memoraa-invitation.my.id/',
