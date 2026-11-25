@@ -107,7 +107,7 @@ const templates: TemplateItem[] = [
     slug: 'basic-sweet-chibi',
     category: 'ilustrasi',
     description: 'Karakter chibi menggemaskan dengan nuansa pastel yang manis. Pilihan pas untuk kamu yang ingin kesan adorable dan penuh kejutan.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmw3nx9z4tyfe19ch/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/SWEET%20CHIBI.jpg?updatedAt=1795642443024',
     price: 'Rp 40.000',
     features: ['Responsif', 'Musik Latar', 'Hitung Mundur'],
     url: 'https://bayu-icha.memoraa-invitation.my.id/',
