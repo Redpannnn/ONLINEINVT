@@ -140,7 +140,7 @@ const templates: TemplateItem[] = [
     slug: 'basic-lovely-maroon',
     category: 'ilustrasi',
     description: 'Nuansa maroon yang manis dengan aksen hati dan tipografi script yang romantis. Menghadirkan kesan hangat dan penuh cinta untuk hari bahagiamu.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmwphsltfjnr4akvl/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/LOVELY%20MAROON.jpg?updatedAt=1795642442677',
     price: 'Rp 35.000',
     features: ['Responsif', 'Musik Latar', 'Galery Foto'],
     url: 'https://lovely-maroon.memoraa-invitation.my.id/',
