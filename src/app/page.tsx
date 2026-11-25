@@ -239,7 +239,7 @@ const templates: TemplateItem[] = [
     slug: 'eksklusif-javanese-terrace',
     category: 'adat',
     description: 'Nuansa teras Jawa yang asri dengan ornamen khas budaya Jawa. Menghadirkan kesan tenang, anggun, dan penuh kehangatan untuk hari istimewamu.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmws9t56xii52md5f/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/JAVANESE%20TERRACE/COVER%20JAVANESE%20TERRACE.jpg?tr=f-auto,q-80',
     price: 'Rp 50.000',
     features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
     url: 'https://javanese-terrace.memoraa-invitation.my.id/',
