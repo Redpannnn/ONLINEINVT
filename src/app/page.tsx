@@ -173,7 +173,7 @@ const templates: TemplateItem[] = [
     slug: 'eksklusif-serene-love',
     category: 'adat',
     description: 'Nuansa burgundy dan gold dengan ornamen bunga mewah. Menghadirkan kesan premium dan anggun untuk hari istimewamu.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmvlcewzalhijhslk/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/SERENE%20LOVE.jpg?updatedAt=1795642442924',
     price: 'Rp 40.000',
     features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
     url: 'https://serene-love.memoraa-invitation.my.id/',
