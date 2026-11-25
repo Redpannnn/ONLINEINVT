@@ -217,10 +217,10 @@ const templates: TemplateItem[] = [
     slug: 'eksklusif-paleja',
     category: 'adat',
     description: 'Nuansa maroon dan emas dengan ornamen bunga klasik tradisional. Menghadirkan kesan anggun dan sakral untuk hari istimewamu.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmwm9909qta3ks3em/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/PALEJA/PALEJA%20COVER.jpg',
     price: 'Rp 45.000',
     features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
-    url: 'https://hendra-eci.memoraa-invitation.my.id/',
+    url: 'https://paleja.memoraa-invitation.my.id/',
   },
   {
     id: 'eksklusif-terracota-minang',
