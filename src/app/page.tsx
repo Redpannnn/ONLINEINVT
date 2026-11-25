@@ -162,7 +162,7 @@ const templates: TemplateItem[] = [
     slug: 'basic-crimson-velvet',
     category: 'luxury',
     description: 'Latar beludru crimson yang mewah dengan amplop bersegel lilin yang elegan. Menghadirkan kesan klasik, dramatis, dan penuh kemewahan untuk hari istimewamu.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmwplae9d21wsi9pv/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/CRIMSON%20VELVET.jpg?updatedAt=1795642442525',
     price: 'Rp 35.000',
     features: ['Responsif', 'Musik Latar', 'Galery Foto'],
     url: 'https://crimson-velvet.memoraa-invitation.my.id/',
