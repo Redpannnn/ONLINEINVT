@@ -206,7 +206,7 @@ const templates: TemplateItem[] = [
     slug: 'eksklusif-royal-heritage',
     category: 'adat',
     description: 'Sentuhan klasik bergaya kerajaan dengan ornamen emas mewah. Menghadirkan kemegahan penuh prestise untuk hari istimewamu.',
-    image: 'https://imglinkv-3.vercel.app/api/images/cmw0l63mj2171rtuh/file',
+    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/ROYAL%20HERITAGE.jpg?updatedAt=1795642442932',
     price: 'Rp 45.000',
     features: ['Animasi Halus', 'Video Cover', 'RSVP', 'Wishes'],
     url: 'https://royal-heritage.memoraa-invitation.my.id/',
