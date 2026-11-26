@@ -253,7 +253,7 @@ const templates: TemplateItem[] = [
     image: 'https://ik.imagekit.io/au8q7zdvt/VINTAGE%20PEACOCK%20COVER.jpg?tr=f-auto,q-80',
     price: 'Rp 45.000',
     features: ['Animasi Halus', 'Video Cover', 'Maps Interaktif', 'RSVP'],
-    url: 'https://vintage-peacock.memoraa-invitation.my.id/',
+    url: 'https://hengky-sindi.memoraa-invitation.my.id/',
   },
 ];
 
