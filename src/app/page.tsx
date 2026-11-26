@@ -195,10 +195,10 @@ const templates: TemplateItem[] = [
     slug: 'eksklusif-rose-crimson',
     category: 'luxury',
     description: 'Nuansa merah crimson yang berani dengan sentuhan floral mewah. Menghadirkan kesan dramatis dan penuh cinta untuk hari istimewamu.',
-    image: 'https://ik.imagekit.io/au8q7zdvt/ORNAMEN%20&%20SOMETHING/TEMPLATE%20LAGI%20DI%20MAINTENANCEK%20KAKAK.jpg',
+    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/ROSE%20CRIMSON.jpg?updatedAt=1795642442710',
     price: 'Rp 45.000',
     features: ['Animasi Halus', 'Video Cover', 'Love Story', 'Wishes'],
-    url: 'https://rose-crimson.memoraa-invitation.my.id/',
+    url: 'https://fadhil-meilany.memoraa-invitation.my.id/',
   },
   {
     id: 'eksklusif-royal-heritage',
