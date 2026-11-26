@@ -41,7 +41,7 @@ const templates: TemplateItem[] = [
     slug: 'basic-autumn-minang',
     category: 'adat',
     description: 'Nuansa autumn yang hangat dengan sentuhan budaya Minangkabau. Menghadirkan kesan alami, hangat, dan penuh cinta untuk hari bahagiamu.',
-    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/AUTUMN%20MINANG.jpg?updatedAt=1795642442388',
+    image: 'https://ik.imagekit.io/au8q7zdvt/ORNAMEN%20&%20SOMETHING/TEMPLATE%20LAGI%20DI%20MAINTENANCEK%20KAKAK.jpg',
     price: 'Rp 35.000',
     features: ['Responsif', 'Musik Latar', 'Galery Foto'],
     url: 'https://autumn-minang.memoraa-invitation.my.id/',
