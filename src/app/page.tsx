@@ -36,15 +36,15 @@ interface TemplateItem {
 
 const templates: TemplateItem[] = [
   {
-    id: 'basic-autumn-minang',
-    name: 'Autumn Minang',
-    slug: 'basic-autumn-minang',
+    id: 'basic-tropical-garden',
+    name: 'Tropical Garden',
+    slug: 'basic-tropical-garden',
     category: 'adat',
     description: 'Nuansa autumn yang hangat dengan sentuhan budaya Minangkabau. Menghadirkan kesan alami, hangat, dan penuh cinta untuk hari bahagiamu.',
-    image: 'https://ik.imagekit.io/au8q7zdvt/ORNAMEN%20&%20SOMETHING/TEMPLATE%20LAGI%20DI%20MAINTENANCEK%20KAKAK.jpg',
-    price: 'Rp 35.000',
+    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/COVER.png',
+    price: 'Rp 50.000',
     features: ['Responsif', 'Musik Latar', 'Galery Foto'],
-    url: 'https://autumn-minang.memoraa-invitation.my.id/',
+    url: 'https://tropicalgarden.memoraa-invitation.my.id/',
   },
   {
     id: 'basic-soft-bloom',
@@ -179,15 +179,15 @@ const templates: TemplateItem[] = [
     url: 'https://serene-love.memoraa-invitation.my.id/',
   },
   {
-    id: 'eksklusif-javanese',
-    name: 'Javanese',
-    slug: 'eksklusif-javanese',
+    id: 'eksklusif-vintage-tapestry',
+    name: 'Vintage Tapestry',
+    slug: 'eksklusif-vintage-tapestry',
     category: 'adat',
     description: 'Sentuhan watercolor floral dengan nuansa dusty rose. Desain penuh cinta yang menceritakan kisah pernikahanmu.',
-    image: 'https://ik.imagekit.io/au8q7zdvt/ORNAMEN%20&%20SOMETHING/TEMPLATE%20LAGI%20DI%20MAINTENANCEK%20KAKAK.jpg',
-    price: 'Rp 35.000',
+    image: 'https://ik.imagekit.io/au8q7zdvt/COVER/VINTAGE%20TAPESTRY.png',
+    price: 'Rp 45.000',
     features: ['Animasi Halus', 'Love Story', 'Galery Grid', 'Wishes'],
-    url: 'https://javanese-traditional.memoraa-invitation.my.id/',
+    url: 'https://vintagetapestry.memoraa-invitation.my.id/',
   },
   {
     id: 'eksklusif-rose-crimson',
